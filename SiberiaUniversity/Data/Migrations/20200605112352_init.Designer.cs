@@ -9,7 +9,7 @@ using SiberiaUniversity.Data;
 
 namespace SiberiaUniversity.Data.Migrations
 {
-    [DbContext(typeof(ApplicationDbContext))]
+    [DbContext(typeof(SchoolContext))]
     [Migration("20200605112352_init")]
     partial class init
     {
