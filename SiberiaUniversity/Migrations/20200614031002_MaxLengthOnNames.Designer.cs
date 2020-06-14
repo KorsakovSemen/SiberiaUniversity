@@ -10,8 +10,8 @@ using SiberiaUniversity.Data;
 namespace SiberiaUniversity.Migrations
 {
     [DbContext(typeof(SchoolContext))]
-    [Migration("20200606024444_AddCourses")]
-    partial class AddCourses
+    [Migration("20200614031002_MaxLengthOnNames")]
+    partial class MaxLengthOnNames
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -63,9 +63,11 @@ namespace SiberiaUniversity.Migrations
 
                     b.Property<DateTime>("EnrollmentDate");
 
-                    b.Property<string>("FirstMidName");
+                    b.Property<string>("FirstMidName")
+                        .HasMaxLength(50);
 
-                    b.Property<string>("LastName");
+                    b.Property<string>("LastName")
+                        .HasMaxLength(50);
 
                     b.HasKey("ID");
 

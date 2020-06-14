@@ -10,8 +10,8 @@ using SiberiaUniversity.Data;
 namespace SiberiaUniversity.Migrations
 {
     [DbContext(typeof(SchoolContext))]
-    [Migration("20200605113935_AddStudent")]
-    partial class AddStudent
+    [Migration("20200611034201_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
