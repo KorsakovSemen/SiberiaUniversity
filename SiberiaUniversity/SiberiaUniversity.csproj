@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20200615084808_AddDbinit.cs" />
+    <Compile Remove="Migrations\20200615084808_AddDbinit.Designer.cs" />
+    <Compile Remove="Migrations\20200615085013_AddDbinit.cs" />
+    <Compile Remove="Migrations\20200615085013_AddDbinit.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
     <PackageReference Include="Microsoft.TypeScript.MSBuild" Version="3.9.2">

@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SiberiaUniversity.Data;
 
 namespace SiberiaUniversity.Migrations
 {
     [DbContext(typeof(SchoolContext))]
-    partial class SchoolContextModelSnapshot : ModelSnapshot
+    [Migration("20200615051829_ComplexDataModel")]
+    partial class ComplexDataModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -39,11 +41,17 @@ namespace SiberiaUniversity.Migrations
 
             modelBuilder.Entity("SiberiaUniversity.Models.CourseAssignment", b =>
                 {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
                     b.Property<int>("CourseID");
 
                     b.Property<int>("InstructorID");
 
-                    b.HasKey("CourseID", "InstructorID");
+                    b.HasKey("ID");
+
+                    b.HasIndex("CourseID");
 
                     b.HasIndex("InstructorID");
 
