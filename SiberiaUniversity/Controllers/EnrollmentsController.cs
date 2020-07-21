@@ -122,6 +122,7 @@ namespace SiberiaUniversity.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+
             ViewData["CourseID"] = new SelectList(_context.Courses, "CourseID", "CourseID", enrollment.CourseID);
             ViewData["StudentID"] = new SelectList(_context.Students, "ID", "ID", enrollment.StudentID);
             return View(enrollment);
